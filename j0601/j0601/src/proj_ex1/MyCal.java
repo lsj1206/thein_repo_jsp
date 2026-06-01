@@ -2,14 +2,14 @@ package proj_ex1;
 
 public class MyCal {
 	int num1;
-	char formula;
 	int num2;
+	char operator;
 	int result;
 	
 	public MyCal(int n, char f, int m) {
 		num1 = n;
 		num2 = m;
-		formula = f;
+		operator = f;
 		
 		switch (f) {
 			case '+':
