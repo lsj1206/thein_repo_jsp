@@ -1,20 +1,23 @@
-# 모든 하위 폴더 내의 .metadata 폴더 제외
+# Eclipse workspace metadata
 **/.metadata/
-# 모든 하위 폴더 내의 bin 폴더 제외
-**/bin/
-# 모든 하위 폴더 내의 tools 폴더 제외
-**/tools
 
-# ===== java default =====
-# Compiled class file
+# Java build output
+**/bin/
 *.class
-# Log file
+
+# Local tool bundle
+tools/
+
+# Logs
 *.log
+
 # BlueJ files
 *.ctxt
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-# Package Files #
+
+# Package files
 *.jar
 *.war
 *.nar
@@ -22,6 +25,7 @@
 *.zip
 *.tar.gz
 *.rar
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+
+# Virtual machine crash logs
 hs_err_pid*
 replay_pid*

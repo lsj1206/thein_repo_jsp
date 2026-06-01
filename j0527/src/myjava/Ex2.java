@@ -1,4 +1,4 @@
-package com.lsj;
+package myjava;
 
 public class Ex2 {
 
