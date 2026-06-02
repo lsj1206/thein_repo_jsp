@@ -10,6 +10,10 @@ public class MyClass {
 		
 		car1.printInfo();
 		car2.printInfo();
+		
+		Person user = new Person();
+		user.setName("이름");
+		String userName = user.getName();
+		System.out.println(userName);
 	}
-
 }
