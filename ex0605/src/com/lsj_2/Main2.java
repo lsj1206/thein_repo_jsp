@@ -24,7 +24,11 @@ class Main2 {
 		String str = myDataTime.format(myFormat);
 		System.out.println(str);
 		
+		int x = 10;
+		int y = 0;
 		
+		int result = x / y;
+		System.out.println(result);
 	}
 
 }
