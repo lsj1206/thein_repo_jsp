@@ -1,4 +1,4 @@
-package com.lsj.otp;
+package com.lsj_otp;
 
 import java.util.Random;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package com.lsj.otp;
+package com.lsj_otp;
 
 class CardPayment extends Payment {
 	@Override
