@@ -2,8 +2,7 @@
 <%@ page import="java.io.File" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
-<%!
-    // 하위 폴더까지 재귀적으로 탐색하며 jsp, html 파일을 수집하는 메서드
+<%! // 하위 폴더까지 재귀적으로 탐색하며 jsp, html 파일을 수집하는 메서드
     public void findWebPages(File dir, String rootPath, List<String> fileList) {
         File[] files = dir.listFiles();
         if (files == null) return;
@@ -38,45 +37,12 @@
 <head>
 <meta charset="UTF-8">
 <title>웹페이지 링크 목록</title>
-<style>
-    body {
-        font-family: 'Malgun Gothic', sans-serif;
-        padding: 30px;
-        background-color: #f9f9f9;
-    }
-    h1 {
-        color: #333;
-        border-bottom: 2px solid #333;
-        padding-bottom: 10px;
-    }
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    li {
-        margin: 10px 0;
-        padding: 8px 12px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
-    a {
-        text-decoration: none;
-        color: #0066cc;
-        font-weight: bold;
-    }
-    a:hover {
-        color: #ff3300;
-        text-decoration: underline;
-    }
-</style>
 </head>
 <body>
 
     <h1>링크 목록</h1>
     <ul>
-        <%
-            // 웹 애플리케이션의 배포 실제 경로 획득
+        <% // 웹 애플리케이션의 배포 실제 경로 획득
             String rootPath = application.getRealPath("/");
             File rootDir = new File(rootPath);
 
@@ -92,9 +58,7 @@
                     // 경로가 '/'로 시작하지 않는 경우 보정
                     String href = pageUrl.startsWith("/") ? pageUrl : "/" + pageUrl;
         %>
-            <li>
-                <a href="<%= request.getContextPath() + href %>"><%= pageUrl %></a>
-            </li>
+            <li> <a href="<%= request.getContextPath() + href %>"><%= pageUrl %></a> </li>
         <%
                 }
             }
