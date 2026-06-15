@@ -1,3 +1,4 @@
+<%@page import="org.apache.naming.java.javaURLContextFactory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.io.File" %>
 <%@ page import="java.util.ArrayList" %>
@@ -39,8 +40,12 @@
 <title>웹페이지 링크 목록</title>
 </head>
 <body>
+	<%@ page info="Date 클랫를 이용한 날짜 출력하기" %>
+	<p>Today is <%= new java.util.Date() %></p>
+    <p>Today is <span id="live-clock">]</span></p>
 
     <h1>링크 목록</h1>
+    
     <ul>
         <% // 웹 애플리케이션의 배포 실제 경로 획득
             String rootPath = application.getRealPath("/");
@@ -66,4 +71,16 @@
     </ul>
 
 </body>
+<script>
+function showTime() {
+    const clockElement = document.getElementById("live-clock");
+    const now = new Date(); // 사용자 브라우저 기준 현재 날짜/시간 생성
+    clockElement.innerText = now.toLocaleString(); // 읽기 편한 포맷으로 변환
+}
+// 1초(1000밀리초)마다 showTime 함수를 반복 실행
+setInterval(showTime, 1000);
+// 페이지 로드 시 즉시 시간을 표시 (1초 지연 방지)
+showTime();
+</script>
+
 </html>
