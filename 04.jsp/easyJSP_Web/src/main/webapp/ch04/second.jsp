@@ -7,8 +7,7 @@
     <title>Action Tag</title>
   </head>
   <body>
-    <h3>Action Tag</h3>
-    <jsp:forward page="second.jsp" />
-    <p> === first.jsp의 페이지 === </p>
+    <h3>이 파일은 second.jsp 입니다.</h3>
+    Today is <%= new java.util.Date() %>
   </body>
 </html>
