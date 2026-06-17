@@ -1,10 +1,16 @@
 package dao;
 
 import java.util.ArrayList;
+import dto.Book;
 
 public class BookRepository {
 
 	private ArrayList<Book> listOfBooks = new ArrayList<Book>();
+	private static BookRepository instance = new BookRepository();
+
+	public static BookRepository getInstance() {
+		return instance;
+	}
 
 	public BookRepository() {
 		Book book1 = new Book("ISBN1234", "C# 프로그래밍", 27000);
@@ -53,4 +59,7 @@ public class BookRepository {
 		return bookById;
 	}
 
+	public void addBook(Book book) {
+		listOfBooks.add(book);
+	}
 }
