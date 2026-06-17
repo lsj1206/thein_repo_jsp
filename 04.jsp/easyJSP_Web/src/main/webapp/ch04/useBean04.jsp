@@ -7,7 +7,7 @@
   <title>Action Tag</title>
 </head>
 <body>
-  <jsp:useBean id="person" class="com.dao.Person" scope="request" />
+  <jsp:useBean id="person" class="dao.Person" scope="request" />
   <p> 아이디 : <%= person.getId() %>
   <p> 이  름 : <%= person.getName() %>
   <%

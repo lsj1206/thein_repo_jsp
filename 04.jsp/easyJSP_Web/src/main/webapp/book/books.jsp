@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.dao.Book" %>
-<jsp:useBean id="bookDAO" class="com.dao.BookRepository" scope="session" />
+<%@ page import="dao.Book" %>
+<jsp:useBean id="bookDAO" class="dao.BookRepository" scope="session" />
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -35,6 +35,7 @@
               <br> <%= book.getPublisher() %> | <%= book.getReleaseDate() %>
               <p> <%= book.getDescription() == null ? "" : (book.getDescription().length() > 60 ? book.getDescription().substring(0, 60) + "..." : book.getDescription()) %>
               <p> <%= book.getUnitPrice() %>원
+              <p> <a href="./book.jsp?id=<%= book.getBookId() %>" class="btn btn-secondary" role="button">상세정보 &raquo;</a>
           </div>
         </div>
       <%

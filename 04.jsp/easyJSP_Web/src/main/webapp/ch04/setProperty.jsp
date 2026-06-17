@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <jsp:useBean id="person" class="com.dao.Person" scope="request" />
+  <jsp:useBean id="person" class="dao.Person" scope="request" />
 
   <%-- 01 setter--%>
   <jsp:setProperty name="person" property="id" value="19991231" />

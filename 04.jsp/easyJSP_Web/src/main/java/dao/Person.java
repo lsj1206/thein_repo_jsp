@@ -1,4 +1,4 @@
-package com.dao;
+package dao;
 
 public class Person implements java.io.Serializable {
 	private int id = 20260616;
