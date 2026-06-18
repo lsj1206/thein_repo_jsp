@@ -1,6 +1,8 @@
 -- 1. 데이터베이스 생성 (이미 있으면 생략)
 --CREATE DATABASE hrd;
 
+SELECT current_database();
+
 -- 2. 테이블 생성
 CREATE TABLE guestbook (
     id      SERIAL PRIMARY KEY,

@@ -1,18 +1,34 @@
 {
 	"folders": {},
 	"connections": {
-		"dbeaver-sample-database-sqlite-1": {
-			"provider": "sqlite",
-			"driver": "sqlite_jdbc",
-			"name": "DBeaver Sample Database (SQLite)",
+		"postgres-jdbc-19ed8a2439c-1b38da9598ee5618": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "postgres",
 			"save-password": true,
-			"show-system-objects": true,
 			"configuration": {
-				"database": "C:\\Users\\1007c\\AppData\\Roaming\\DBeaverData\\workspace6\\.metadata\\sample-database-sqlite-1\\Chinook.db",
-				"url": "jdbc:sqlite:C:\\Users\\1007c\\AppData\\Roaming\\DBeaverData\\workspace6\\.metadata\\sample-database-sqlite-1\\Chinook.db",
+				"host": "localhost",
+				"port": "5432",
+				"database": "postgres",
+				"url": "jdbc:postgresql://localhost:5432/postgres",
 				"configurationType": "MANUAL",
+				"home": "postgresql-x64-16",
 				"type": "dev",
-				"closeIdleConnection": true
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "false",
+					"@dbeaver-chosen-role@": "",
+					"@dbeaver-show-template-db@": "false",
+					"@dbeaver-show-unavailable-db@": "false",
+					"show-database-statistics": "false",
+					"@dbeaver-read-all-data-types-db@": "false",
+					"read-keys-with-columns": "false",
+					"replace-legacy-timezone": "false",
+					"@dbeaver-use-prepared-statements-db@": "false",
+					"postgresql.dd.plain.string": "false",
+					"postgresql.dd.tag.string": "false"
+				},
+				"auth-model": "native"
 			}
 		}
 	},
