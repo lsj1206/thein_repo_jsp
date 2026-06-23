@@ -8,11 +8,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+@WebServlet("/ex06/member")
 public class MemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final MemberDAO dao = new MemberDAO();
 
-	protected void deGet(HttpServletRequest req, HttpServletResponse resp)
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 		throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		String action = req.getParameter("action");
@@ -23,14 +24,14 @@ public class MemberServlet extends HttpServlet {
 			case "list": {
 				List<MemberVO> list = dao.getList();
 				req.setAttribute("memberList", list);
-				forward(req, resp, "ex06/list.jsp");
+				forward(req, resp, "/ex06/list.jsp");
 				break;
 				}
-			case "view": {
+			case "detail": {
 				int viewId = Integer.parseInt(req.getParameter("id"));
 				MemberVO member = dao.get(viewId);
 				req.setAttribute("member", member);
-				forward(req, resp, "ex06/view.jsp");
+				forward(req, resp, "/ex06/view.jsp");
 				break;
 				}
 			case "form": {
@@ -47,11 +48,11 @@ public class MemberServlet extends HttpServlet {
 			case "delete": {
 				int delId = Integer.parseInt(req.getParameter("id"));
 				dao.delete(delId);
-				resp.sendRedirect(req.getContextPath() + "ex06/member");
+				resp.sendRedirect(req.getContextPath() + "/ex06/member");
 				break;
 				}
 			default:
-				resp.sendRedirect(req.getContextPath() + "ex06/member");
+				resp.sendRedirect(req.getContextPath() + "/ex06/member");
 			}
 		}
 		catch (Exception e) {
@@ -80,7 +81,7 @@ public class MemberServlet extends HttpServlet {
 					dao.update(vo);
 				}
 
-				resp.sendRedirect(req.getContextPath() + "ex06/member");
+				resp.sendRedirect(req.getContextPath() + "/ex06/member");
 			}
 			catch (Exception e) {
 				req.setAttribute("errorMsg", e.getMessage());

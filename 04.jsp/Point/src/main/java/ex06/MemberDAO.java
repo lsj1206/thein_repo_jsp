@@ -8,7 +8,7 @@ public class MemberDAO {
 
 	public List<MemberVO> getList() throws Exception {
 		List<MemberVO> list = new ArrayList<>();
-		String sql = "SELECT id, userid, username, email, req_date, FROM member ORDER BY id DESC";
+		String sql = "SELECT id, userid, username, email, reg_date FROM member ORDER BY id DESC";
 
 		try (Connection conn = DBUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -20,7 +20,7 @@ public class MemberDAO {
 				vo.setUserId(rs.getString("userid"));
 				vo.setUserName(rs.getString("username"));
 				vo.setEmail(rs.getString("email"));
-				vo.setRegDate(rs.getTimestamp("req_date"));
+				vo.setRegDate(rs.getTimestamp("reg_date"));
 
 				list.add(vo);
 			}
@@ -40,7 +40,7 @@ public class MemberDAO {
 					vo.setPassword(rs.getString("password"));
 					vo.setUserName(rs.getString("username"));
 					vo.setEmail(rs.getString("email"));
-					vo.setRegDate(rs.getTimestamp("req_date"));
+					vo.setRegDate(rs.getTimestamp("reg_date"));
 					return vo;
 				}
 			}

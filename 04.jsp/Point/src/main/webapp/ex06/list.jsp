@@ -25,6 +25,10 @@
   <br><br>
   <%
     List<MemberVO> memberList = (List<MemberVO>) request.getAttribute("memberList");
+    if (memberList == null) {
+        response.sendRedirect(request.getContextPath() + "/ex06/member");
+        return;
+    }
   %>
   <table>
     <tr>
