@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.DriverManager,
                  java.sql.ResultSet,
-                 java.sql.PreparedStatement,
+                 java.sql.Statement,
                  java.sql.Connection"%>
 <!DOCTYPE html>
 <html>

@@ -13,6 +13,9 @@
   <jsp:include page="header.jsp"/>
 
   <%
+ 
+  int id = Integer.parseInt(request.getParameter("id"));
+  
   String url = "jdbc:postgresql://localhost:5432/hrd";
   String dbUser = "postgres";
   String dbPass = "1234";
@@ -26,7 +29,7 @@
     conn = DriverManager.getConnection(url, dbUser, dbPass);
 
     String sql = "SELECT * FROM board WHERE id = ?";
-    pstmt = conn.preparedStatement(sql);
+    pstmt = conn.prepareStatement(sql);
     pstmt.setInt(1, id);
     rs = pstmt.executeQuery();
 

@@ -24,7 +24,7 @@
       conn = DriverManager.getConnection(url,dbUser,dbPass);
 
       String sql = "INSERT INTO board (title, content, writer) VALUES (?, ?, ?)";
-      pstmt = conn.preparedStatement(sql);
+      pstmt = conn.prepareStatement(sql);
       pstmt.setString(1, title);
       pstmt.setString(2, content);
       pstmt.setString(3, author);
