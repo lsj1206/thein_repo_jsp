@@ -6,12 +6,12 @@
 <title>골프연습장 강사매출현황</title>
 </head>
 <body>
-<%@ include file="layout/header.jsp" %>
+<%@ include file="../layout/header.jsp" %>
 <section>
 	<div class="title">골프연습장 강사매출현황</div>
 
 
 </section>
-<%@ include file="layout/footer.jsp" %>
+<%@ include file="../layout/footer.jsp" %>
 </body>
 </html>
