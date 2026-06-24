@@ -4,6 +4,7 @@ import golf.DBconnection;
 import golf.vo.TeacherVO;
 import golf.vo.MemberVO;
 import golf.vo.SalesVO;
+import golf.vo.ClassVO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +36,11 @@ public class GolfDAO {
 
 	public List<MemberVO> getMemberList() throws Exception {
 		List<MemberVO> list = new ArrayList<>();
-		String sql = "SELECT c_no, c_name, phone, address, grade FROM golf_member ORDER BY c_no ASC";
+		String sql = "SELECT m.c_no, m.c_name, m.phone, m.address, m.grade, t.class_name, c.class_area, c.tuition, c.regist_month " +
+		             "FROM golf_member m " +
+		             "LEFT JOIN golf_class c ON m.c_no = c.c_no " +
+		             "LEFT JOIN golf_teacher t ON c.teacher_code = t.teacher_code " +
+		             "ORDER BY m.c_no ASC";
 
 		try (Connection conn = DBconnection.getConnection();
 			 PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -48,6 +53,10 @@ public class GolfDAO {
 				vo.setPhone(rs.getString("phone"));
 				vo.setAddress(rs.getString("address"));
 				vo.setGrade(rs.getString("grade"));
+				vo.setClassName(rs.getString("class_name"));
+				vo.setClassArea(rs.getString("class_area"));
+				vo.setTuition(rs.getInt("tuition"));
+				vo.setRegistMonth(rs.getString("regist_month"));
 				list.add(vo);
 			}
 		}
@@ -76,5 +85,18 @@ public class GolfDAO {
 			}
 		}
 		return list;
+	}
+
+	public int insertClass(ClassVO vo) throws Exception {
+		String sql = "INSERT INTO golf_class (regist_month, c_no, class_area, tuition, teacher_code) VALUES (?, ?, ?, ?, ?)";
+		try (Connection conn = DBconnection.getConnection();
+			 PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, vo.getRegistMonth());
+			pstmt.setInt(2, vo.getcNo());
+			pstmt.setString(3, vo.getClassArea());
+			pstmt.setInt(4, vo.getTuition());
+			pstmt.setInt(5, vo.getTeacherCode());
+			return pstmt.executeUpdate();
+		}
 	}
 }

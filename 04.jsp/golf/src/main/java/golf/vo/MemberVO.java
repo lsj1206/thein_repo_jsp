@@ -6,6 +6,10 @@ public class MemberVO {
 	private String phone;
 	private String address;
 	private String grade;
+	private String className;
+	private String classArea;
+	private int tuition;
+	private String registMonth;
 
 	public int getcNo() {
 		return cNo;
@@ -36,5 +40,29 @@ public class MemberVO {
 	}
 	public void setGrade(String grade) {
 		this.grade = grade;
+	}
+	public String getClassName() {
+		return className;
+	}
+	public void setClassName(String className) {
+		this.className = className;
+	}
+	public String getClassArea() {
+		return classArea;
+	}
+	public void setClassArea(String classArea) {
+		this.classArea = classArea;
+	}
+	public int getTuition() {
+		return tuition;
+	}
+	public void setTuition(int tuition) {
+		this.tuition = tuition;
+	}
+	public String getRegistMonth() {
+		return registMonth;
+	}
+	public void setRegistMonth(String registMonth) {
+		this.registMonth = registMonth;
 	}
 }

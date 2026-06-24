@@ -17,7 +17,7 @@
 
     <%
         List<TeacherVO> teacherList = (List<TeacherVO>) request.getAttribute("teacherList");
-        DecimalFormat df = new DecimalFormat("₩#,###원");
+        DecimalFormat df = new DecimalFormat("#,###원");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
     %>
 

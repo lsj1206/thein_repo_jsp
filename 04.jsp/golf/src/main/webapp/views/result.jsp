@@ -16,7 +16,7 @@
 
     <%
         List<SalesVO> salesList = (List<SalesVO>) request.getAttribute("salesList");
-        DecimalFormat df = new DecimalFormat("₩#,###원");
+        DecimalFormat df = new DecimalFormat("#,###원");
     %>
 
     <table>

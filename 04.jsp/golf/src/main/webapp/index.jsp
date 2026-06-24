@@ -8,9 +8,10 @@
 <body>
 <%@ include file="layout/header.jsp" %>
 <section>
-	<div class="title">골프연습장 회원관리 프로그램</div>
-
-
+	<div class="title">홈</div>
+	<div class="home-message">
+		골프 연습장 회원관리 프로그램
+	</div>
 </section>
 <%@ include file="layout/footer.jsp" %>
 </body>
